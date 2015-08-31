@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=xenlism
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=xenlism
+MetacityTheme=xenlism
+IconTheme=TheCircle
+CursorTheme=mate
+
