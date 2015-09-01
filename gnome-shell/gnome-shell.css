@@ -101,27 +101,35 @@ StScrollBar StButton#vhandle:active {
 
 /* Check Boxes */
 
+.slider {
+  -slider-height: 4px;
+  -slider-background-color: #cfd6e6;
+  -slider-border-color: transparent;
+  -slider-active-background-color: #5294E2;
+  -slider-active-border-color: transparent;
+  -slider-border-width: 0;
+  -slider-handle-radius: 4px;
+  height: 18px;
+  border: 0 solid transparent;
+  border-right-width: 1px;
+  border-left-width: 5px;
+  color: transparent; }
+
 .check-box StBoxLayout {
-	spacing: .8em;
+  spacing: .8em;
 }
-
 .check-box StBin {
-	width: 16px;
-	height: 16px;
-	background-image: url("checkbox-off.png");
-}
-
+  width: 16px;
+  height: 16px;
+  background-image: url("checkbox/checkbox-unchecked.svg"); }
 .check-box:focus StBin {
-	background-image: url("checkbox-off.png");
-}
-
+  background-image: url("checkbox/checkbox-unchecked-focused.svg"); }
 .check-box:checked StBin {
-	background-image: url("checkbox.png");
-}
-
+  background-image: url("checkbox/checkbox-checked.svg"); }
 .check-box:focus:checked StBin {
-	background-image: url("checkbox.png");
-}
+  background-image: url("checkbox/checkbox-checked-focused.svg"); }
+
+
 
 /* Slider */
 
@@ -256,28 +264,13 @@ StScrollBar StButton#vhandle:active {
 
 /* Switches */
 .toggle-switch {
-	width: 36px;
-	height: 20px;
-	background-color: rgba(0,0,0,0.0);
-}
-
-.toggle-switch-us {
-	background-image: url("switch-off.svg");
-	background-size: contain;
-}
-.toggle-switch-us:checked {
-	background-image: url("switch-on.svg");
-	background-size: contain;
-}
-
-.toggle-switch-intl {
-	background-image: url("switch-off.svg");
-	background-size: contain;
-}
-.toggle-switch-intl:checked {
-	background-image: url("switch-on.svg");
-	background-size: contain;
-}
+  width: 52px;
+  height: 24px;
+  background-size: contain; }
+  .toggle-switch-us, .toggle-switch-intl {
+    background-image: url("switch/switch-off.svg"); }
+    .toggle-switch-us:checked, .toggle-switch-intl:checked {
+      background-image: url("switch/switch-on.svg"); }
 
 /* Network */
 
@@ -574,7 +567,7 @@ StScrollBar StButton#vhandle:active {
 #panelApplications,
 #panelActivities {
 	border:1px;
-    	background-image: url("logo.png");
+    	background-image: url("logo.svg");
 	background-position: center;
     	width: 60px;
     	height: 20px;
@@ -584,7 +577,7 @@ StScrollBar StButton#vhandle:active {
 #panelApplications:hover,
 #panelActivities:hover {
 	border:1px;
-	background-image: url("logo-hover.png");
+	background-image: url("logo-hover.svg");
 	background-gradient-direction: none;
 	border-color: transparent;
 }
@@ -592,7 +585,7 @@ StScrollBar StButton#vhandle:active {
 #panelApplications:overview,
 #panelActivities:overview,
 #panelActivities:active{
-    	background-image: url("logo.png");
+    	background-image: url("logo.svg");
 	border:1px solid red;
 	border-color: transparent;
    	background-gradient-direction: none;
