@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="52"
+   height="52"
+   id="svg2"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="corner-ripple-rtl.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1869"
+     inkscape:window-height="1049"
+     id="namedview955"
+     showgrid="false"
+     inkscape:zoom="12.836708"
+     inkscape:cx="32.233898"
+     inkscape:cy="22.338625"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient3857">
+      <stop
+         id="stop3859"
+         style="stop-color:#398dd3;stop-opacity:0"
+         offset="0" />
+      <stop
+         id="stop3861"
+         style="stop-color:#398cd3;stop-opacity:1"
+         offset="1" />
+    </linearGradient>
+    <radialGradient
+       cx="0"
+       cy="0"
+       r="52"
+       fx="0"
+       fy="0"
+       id="radialGradient3863"
+       xlink:href="#linearGradient3857"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="matrix(-1,0,0,1,52,-1000.3091)"
+     id="g4214"
+     style="fill:#ffffff">
+    <g
+       transform="translate(-5,-5.0892857)"
+       id="g4391"
+       style="fill:#ffffff">
+      <rect
+         style="fill:#ffffff;fill-opacity:0.61568627"
+         id="rect4150-8"
+         width="5"
+         height="5"
+         x="20.089285"
+         y="1010.3801"
+         rx="0"
+         ry="0" />
+      <rect
+         style="opacity:0.8;fill:#ffffff;fill-opacity:0.76862745"
+         id="rect4150-6"
+         width="5"
+         height="5"
+         x="10"
+         y="1020.3622"
+         rx="0"
+         ry="0" />
+      <path
+         inkscape:connector-curvature="0"
+         id="rect4150-8-2"
+         transform="translate(0,1000.3622)"
+         d="m 15.089844,35.089844 0,5 5,0 0,-5 -5,0 z"
+         style="opacity:0.75;fill:#ffffff;fill-opacity:0.61568627" />
+      <rect
+         style="opacity:0.75;fill:#ffffff;fill-opacity:0.61568627"
+         id="rect4150-8-2-1"
+         width="5"
+         height="5"
+         x="24.94643"
+         y="1025.4337"
+         rx="0"
+         ry="0" />
+      <rect
+         style="opacity:0.75;fill:#ffffff;fill-opacity:0.61568627"
+         id="rect4150-8-2-1-4"
+         width="5"
+         height="5"
+         x="35"
+         y="1015.4159"
+         rx="0"
+         ry="0" />
+      <rect
+         style="opacity:0.6;fill:#ffffff;fill-opacity:0.61568627"
+         id="rect4150-8-2-1-4-0"
+         width="5"
+         height="5"
+         x="25"
+         y="1045.3981"
+         rx="0"
+         ry="0" />
+      <rect
+         style="opacity:0.6;fill:#ffffff;fill-opacity:0.61568627"
+         id="rect4150-8-2-1-4-0-3"
+         width="5"
+         height="5"
+         x="35"
+         y="1035.4338"
+         rx="0"
+         ry="0" />
+      <rect
+         style="opacity:0.6;fill:#ffffff;fill-opacity:0.61568627"
+         id="rect4150-8-2-1-4-0-8"
+         width="5"
+         height="5"
+         x="44.964287"
+         y="1025.5052"
+         rx="0"
+         ry="0" />
+    </g>
+    <path
+       id="rect4150-8-2-3"
+       d="m 0.03627273,1040.3984 0,5 5.00000027,0 0,-5 -5.00000027,0 z"
+       style="opacity:0.75;fill:#ffffff;fill-opacity:0.61568627"
+       inkscape:connector-curvature="0" />
+    <path
+       id="rect4150-8-2-3-9"
+       d="m 45.018416,1010.3627 0,5 5,0 0,-5 -5,0 z"
+       style="opacity:0.75;fill:#ffffff;fill-opacity:0.61568627"
+       inkscape:connector-curvature="0" />
+    <path
+       id="rect4150-8-2-3-2"
+       d="m 40.000559,1000.3091 0,5 5,0 0,-5 -5,0 z"
+       style="opacity:0.75;fill:#ffffff;fill-opacity:0.61568627"
+       inkscape:connector-curvature="0" />
+    <rect
+       transform="scale(1,-1)"
+       style="opacity:0.6;fill:#ffffff;fill-opacity:0.61568627"
+       id="rect4150-8-2-1-4-0-86"
+       width="5"
+       height="5"
+       x="10.009562"
+       y="-1050.3624"
+       rx="0"
+       ry="0" />
+  </g>
+</svg>

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Xenlism Minimalism
+Comment=A Minimalism themes, base On Arc Theme.
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Xenlism-Minimalism
+MetacityTheme=Xenlism-Minimalism
+IconTheme=Xenlism-Wildfire
+CursorTheme=DMZ-Black
+ButtonLayout=close,minimize,maximize:menu;

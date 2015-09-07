@@ -1,0 +1,40 @@
+#!/bin/bash
+
+#bash <(echo "echo fuck");
+DISTRO=$(cat /etc/*release  | grep "ID=" | grep -v "_ID=" | sed 's/^ID=//');
+GITREPOURL="https://github.com/xenlism/minimalism.git";
+GITTARURL="https://github.com/xenlism/minimalism/tarball/master";
+TARGETURI="/tmp/xenlism-minimalism.tar.gz";
+
+USRTHEMESDIR="/usr/share/themes";
+
+
+echo "Welcome to Xenlism Minimalism Installation.";
+echo "remark: ${DISTRO} linux";
+
+
+function install_pkg {
+	cd ..;
+	SOURCEDIR=$(pwd);
+	if [ -d $SOURCEDIR ]
+	then
+		cd "${SOURCEDIR}";
+		if [ -d "${SOURCEDIR}/themes/" ]
+		then
+			echo "Info: Install Gnome / GTK  Theme."
+			cd "${SOURCEDIR}/themes/"
+  			sudo cp -r * "${USRTHEMESDIR}";
+  			sudo find "${USRTHEMESDIR}" -type d -exec chmod 755 '{}' \;
+  			sudo find "${USRTHEMESDIR}" -type f -exec chmod 644 '{}' \;
+		else
+			echo "Error; No Gnome / GTK theme source found."
+		
+		fi
+	else 
+		echo "Error: No Source Found"
+		echo "No source directory.Please try again later."
+	fi
+}
+
+install_pkg
+
