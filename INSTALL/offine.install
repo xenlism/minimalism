@@ -23,7 +23,7 @@ function install_pkg {
 		then
 			echo "Info: Install Gnome / GTK  Theme."
 			cd "${SOURCEDIR}/themes/"
-  			sudo cp -r * "${USRTHEMESDIR}";
+  			sudo cp -r Xenlism-Minimalism "${USRTHEMESDIR}";
   			sudo find "${USRTHEMESDIR}" -type d -exec chmod 755 '{}' \;
   			sudo find "${USRTHEMESDIR}" -type f -exec chmod 644 '{}' \;
 		else
