@@ -16,8 +16,8 @@ Buy coffee for me Paypal exenatt@gmail.com
 
 if you need to discuss or show your desktop and share idea. All at [xenlism Community](https://plus.google.com/communities/109015399598666540563).   
 
-![screenshot](https://raw.githubusercontent.com/xenlism/wildfire/master/Screenshot/xenlism_minimalism_cover1.png)   
-![screenshot](https://raw.githubusercontent.com/xenlism/wildfire/master/Screenshot/xenlism_minimalism_cover2.png)    
-![screenshot](https://raw.githubusercontent.com/xenlism/wildfire/master/Screenshot/xenlism_minimalism_cover3.png)    
+![screenshot](https://raw.githubusercontent.com/xenlism/minimalism/master/Screenshot/xenlism_minimalism_cover1.png)   
+![screenshot](https://raw.githubusercontent.com/xenlism/minimalism/master/Screenshot/xenlism_minimalism_cover2.png)    
+![screenshot](https://raw.githubusercontent.com/xenlism/minimalism/master/Screenshot/xenlism_minimalism_cover3.png)    
     
 
