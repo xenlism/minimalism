@@ -15,6 +15,41 @@ xenlism minimalism is [GPL](http://www.gnu.org/licenses/gpl-3.0.txt).
 Buy coffee for me Paypal exenatt@gmail.com
 
 if you need to discuss or show your desktop and share idea. All at [xenlism Community](https://plus.google.com/communities/109015399598666540563).   
+   
+#Installations
+Install with wget
+
+
+	bash <(wget -qO- https://raw.githubusercontent.com/xenlism/minimalism/master/INSTALL/online.install) 
+	
+                    
+
+Install with curl    
+
+
+	bash <(curl -s https://raw.githubusercontent.com/xenlism/minimalism/master/INSTALL/online.install)   
+
+
+
+Install with git   
+
+
+	cd /tmp;git clone https://github.com/xenlism/minimalism.git;bash /tmp/minimalism/INSTALL/offine.install;
+
+
+Install with wget and git   
+
+
+	bash <(wget -qO- https://raw.githubusercontent.com/xenlism/minimalism/master/INSTALL/git.install)   
+  
+   
+Install with curl and git  
+
+
+	bash <(curl -s https://raw.githubusercontent.com/xenlism/minimalism/master/INSTALL/git.install)    
+    
+
+
 
 ![screenshot](https://raw.githubusercontent.com/xenlism/minimalism/master/Screenshot/xenlism_minimalism_cover1.png)   
 ![screenshot](https://raw.githubusercontent.com/xenlism/minimalism/master/Screenshot/xenlism_minimalism_cover2.png)    
