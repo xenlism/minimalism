@@ -9,7 +9,7 @@ TARGETURI="/tmp/xenlism-minimalism.tar.gz";
 USRTHEMESDIR="/usr/share/themes";
 
 
-echo "Welcome to Xenlism WildFire Installation.";
+echo "Welcome to Xenlism Minimalism Installation.";
 echo "remark: ${DISTRO} linux";
 
 function start {
@@ -27,7 +27,7 @@ function install_pkg {
 		if [ -d "${SOURCEDIR}/themes/" ]
 		then
 			echo "Info: Install Gnome / GTK  Theme."
-			cd "${SOURCEDIR}/icons/"
+			cd "${SOURCEDIR}/themes/"
   			sudo cp -r * "${USRTHEMESDIR}";
   			sudo find "${USRTHEMESDIR}" -type d -exec chmod 755 '{}' \;
   			sudo find "${USRTHEMESDIR}" -type f -exec chmod 644 '{}' \;
