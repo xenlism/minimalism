@@ -625,6 +625,7 @@ StScrollBar {
     border-bottom-width: 1px;
     border-color: transparent; }
     #panel .panel-button .app-menu-icon {
+      app-icon-bottom-clip: 1px;
       width: 0;
       height: 0;
       margin-left: 0px;
@@ -632,10 +633,14 @@ StScrollBar {
     #panel .panel-button:hover {
       color: #ffffff;
       background-color: rgba(0, 0, 0, 0);
+      border-image:none;
+      background-image:none;
       border-bottom-width: 1px;
       border-color: transparent; }
     #panel .panel-button:active, #panel .panel-button:overview, #panel .panel-button:focus, #panel .panel-button:checked {
       color: #ffffff;
+            border-image:none;
+      background-image:none;
       background-color: transparent;
       box-shadow: none;
       border-bottom-width: 1px;
@@ -649,7 +654,8 @@ StScrollBar {
       #panel StIcon .system-status-icon {
 	text-shadow: rgba(0 ,0 ,0 ,0.5) 0px 0px 2px;icon-shadow: rgba(0 ,0 ,0 ,0.5) 0px 0px 2px;
       }
-
+    .panel-button #appMenuIcon {
+       app-icon-bottom-clip: 1px;width: 0px;height: 0px;}
     #panel .panel-button .system-status-icon {
       icon-size: 16px;
       padding: 0 4px; }
