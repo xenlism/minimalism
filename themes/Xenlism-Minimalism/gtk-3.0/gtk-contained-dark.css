@@ -1508,9 +1508,9 @@ column-header .button, column-header .button:hover, column-header .button:active
         box-shadow: inset 0 1px #2d3036, inset 0 -1px #2d3036, inset 1px 0 #2d3036, inset -1px 0 #383C45; }
     .notebook tab GtkLabel {
       padding: 0 2px;
-      color: rgba(58, 58, 58, 0.45); }
+      color: rgba(175, 175, 175, 0.45); }
     .notebook tab .prelight-page GtkLabel, .notebook tab GtkLabel.prelight-page {
-      color: rgba(58, 58, 58, 0.725); }
+      color: rgba(175, 175, 175, 0.725); }
     .notebook tab .active-page GtkLabel, .notebook tab GtkLabel.active-page {
       color: #D3DAE3; }
     .notebook tab .button {
