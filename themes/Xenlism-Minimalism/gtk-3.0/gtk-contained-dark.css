@@ -313,7 +313,7 @@ GtkSearchEntry.entry {
     background-color: transparent;
     background-image: none; }
   .button:insensitive {
-    color: rgba(58, 58, 58, 0.45);
+    color: rgba(200, 200, 200, 0.45);
     border-color: rgba(45, 48, 54, 0.55);
     background-color: rgba(61, 65, 75, 0.55); }
     .button:insensitive > GtkLabel {
@@ -660,6 +660,9 @@ GtkSearchEntry.entry {
   .linked.vertical > GtkComboBox:only-child > .button:hover {
     box-shadow: none; }
 
+
+
+
 .menuitem.button.flat, .button:link, .button:visited, .button:link:hover, .button:link:active, .button:link:checked, .button:visited:hover, .button:visited:active, .button:visited:checked, .menu.button, .popup.button, .notebook tab .button, .list-row.button, .app-notification .button.flat,
 .app-notification.frame .button.flat, .app-notification .button.flat:insensitive,
 .app-notification.frame .button.flat:insensitive {
@@ -677,6 +680,9 @@ GtkSearchEntry.entry {
     background-color: #4b4f59; }
   .menuitem.button.flat:checked {
     color: #D3DAE3; }
+.button.flat.menuitem:insensitive * {
+	color: rgba(200, 200, 200, 0.4);
+}
 
 /*********
  * Links *
@@ -1179,7 +1185,7 @@ GtkComboBox {
   opacity: 0.75; }
 
 .primary-toolbar GtkProgressBar.trough, .header-bar GtkProgressBar.trough, .primary-toolbar .level-bar.trough, .header-bar .level-bar.trough {
-  background-color: rgba(207, 218, 231, 0.15); 
+  background-color: rgba(207, 218, 231, 0.15);
   }
 
 .primary-toolbar GtkProgressBar:backdrop, .header-bar GtkProgressBar:backdrop {
@@ -1338,7 +1344,7 @@ column-header .button, column-header .button:hover, column-header .button:active
       border: solid rgba(255, 255, 255, 0.07);
       border-width: 1px 0 1px 0; }
     .menu .menuitem:insensitive, .popup .menuitem:insensitive {
-      color: rgba(58, 58, 58, 0.45); }
+      color: rgba(255, 255, 255, 0.5); }
     .menu .menuitem.separator, .menu GtkPlacesSidebar.sidebar .menuitem.view.separator, GtkPlacesSidebar.sidebar .menu .menuitem.view.separator, .popup .menuitem.separator, .popup GtkPlacesSidebar.sidebar .menuitem.view.separator, GtkPlacesSidebar.sidebar .popup .menuitem.view.separator {
       color: rgba(56, 60, 69, 0); }
     .menu .menuitem.arrow, .popup .menuitem.arrow {
@@ -1355,7 +1361,7 @@ column-header .button, column-header .button:hover, column-header .button:active
     .menu.button:hover, .popup.button:hover {
       background-color: #484c55; }
     .menu.button:insensitive, .popup.button:insensitive {
-      color: transparent;
+      color: rgba(255, 255, 255, 0.5);
       background-color: transparent;
       border-color: transparent; }
 
@@ -1811,11 +1817,15 @@ GtkCheckButton.text-button, GtkRadioButton.text-button {
   padding: 1px 2px 4px;
   outline-offset: 0; }
   GtkCheckButton.text-button:insensitive,
+  GtkCheckButton.text-button:insensitive > *,
   GtkCheckButton.text-button:insensitive:active,
+  GtkCheckButton.text-button:insensitive:active > *,
   GtkCheckButton.text-button:insensitive:inconsistent, GtkRadioButton.text-button:insensitive,
   GtkRadioButton.text-button:insensitive:active,
   GtkRadioButton.text-button:insensitive:inconsistent {
-    color: rgba(58, 58, 58, 0.45); }
+    color: rgba(200, 200, 200, 0.45); }
+
+
 
 /************
  * GtkScale *
@@ -3474,6 +3484,11 @@ GtkFileChooserDialog *,
 NautilusWindow *,
 NemoWindow {
   -GtkPaned-handle-size: 0; }
+
+NautilusWindow .sidebar-icon {
+    padding: 0 7px;
+
+}
 
 GtkFileChooserDialog .sidebar,
 NautilusWindow .sidebar,
