@@ -1063,10 +1063,14 @@ StScrollBar {
 .window-caption, .window-caption:hover {
   spacing: 25px;
   color: #4A4B4C;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(255, 255, 255, 0.7);
   border-radius: 2px;
   padding: 4px 12px;
   -shell-caption-spacing: 12px; }
+
+.window-caption:hover {
+  color: #5294E2;
+}
 
 .search-entry {
   width: 320px;
