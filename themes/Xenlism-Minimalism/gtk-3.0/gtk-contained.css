@@ -3765,6 +3765,10 @@ GtkFileChooserDialog .dialog-vbox > .frame .entry {
     color: #555a62;
     border-color: rgba(0, 0, 0, 0.4);
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1)); }
+    
+NautilusWindow .sidebar-icon {
+  padding: 10px;
+}
 
 /* GTK NAMED COLORS */
 @define-color theme_fg_color #333333;
