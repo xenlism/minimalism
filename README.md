@@ -11,7 +11,7 @@ xenlism minimalism beta 2 base on [Arc Theme](https://github.com/horst3180/Arc-t
 
     
 xenlism minimalism is [GPL](http://www.gnu.org/licenses/gpl-3.0.txt). 
-Buy coffee for me Paypal exenatt@gmail.com
+Buy coffee for me Paypal ixenatt@icloud.com
 
 if you need to discuss or show your desktop and share idea. All at [xenlism Community](https://plus.google.com/communities/109015399598666540563).   
    
