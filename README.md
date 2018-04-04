@@ -1,6 +1,6 @@
 # minimalism
 ---  
-xenlism is Computer Graphic And Programming project to make something batter.   
+xenlism is Computer Graphic And Programming project to make something better.   
 xenlism is about minimalism and realism.   
 xenlism minimalism is Gnome / GTK theme for Gnome 3.x desktop environment.     
 xenlism minimalism inspired by Elementary OS.    
