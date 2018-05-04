@@ -27,7 +27,7 @@ style "default" {
 
   GtkScrollbar::trough-border = 0
   GtkRange::trough-border = 0
-  GtkRange::slider-width = 11
+  GtkRange::slider-width = 13
   GtkRange::stepper-size = 0
 
   GtkScrollbar::activate-slider = 1
@@ -37,10 +37,12 @@ style "default" {
   GtkScrolledWindow::scrollbar-spacing = 0
   GtkScrolledWindow::scrollbars-within-bevel = 1
 
-  GtkVScale::slider_length = 15
-  GtkVScale::slider_width = 15
-  GtkHScale::slider_length = 15
-  GtkHScale::slider_width = 15
+  GtkScale::slider_length = 15
+  GtkScale::slider_width = 15
+  GtkScale::trough-side-details = 1
+
+  GtkProgressBar::min-horizontal-bar-height = 8
+  GtkProgressBar::min-vertical-bar-width = 8
 
   GtkStatusbar::shadow_type = GTK_SHADOW_NONE
   GtkSpinButton::shadow_type = GTK_SHADOW_NONE
@@ -48,8 +50,11 @@ style "default" {
   GtkToolbar::shadow-type = GTK_SHADOW_NONE
   GtkMenuBar::internal-padding = 0 #( every window is misaligned for the sake of menus ):
   GtkMenu::horizontal-padding = 0
-  GtkMenu::vertical-padding = 0
+  GtkMenu::vertical-padding = 2
+  GtkMenuItem::arrow-scaling   = 1
+  GtkMenuItem::toggle-spacing  = 10
 
+  # GtkCheckButton::indicator-size    = 24
   GtkCheckButton::indicator_spacing = 3
   GtkOptionMenu::indicator_spacing = { 8, 2, 0, 0 }
 
@@ -58,7 +63,6 @@ style "default" {
   GtkTreeView::vertical-separator = 4
   GtkTreeView::horizontal-separator = 4
   GtkTreeView::allow-rules = 1
-  GtkTreeView::even_row_color = @base_color
   GtkTreeView::odd_row_color = shade(0.98, @base_color)
 
   GtkExpander::expander-size = 11
@@ -73,22 +77,22 @@ style "default" {
   # Colors
 
   bg[NORMAL] = @bg_color
-  bg[PRELIGHT] = shade (1.02, @bg_color)
+  bg[PRELIGHT] = @selected_bg_color
   bg[SELECTED] = @selected_bg_color
   bg[INSENSITIVE] = @insensitive_bg_color
   bg[ACTIVE] = shade (0.9, @bg_color)
 
   fg[NORMAL] = @text_color
-  fg[PRELIGHT] = @fg_color
-  fg[SELECTED] = @selected_fg_color
+  fg[PRELIGHT] = @text_color
+  fg[SELECTED] = @text_color
   fg[INSENSITIVE] = @insensitive_fg_color
-  fg[ACTIVE] = @fg_color
+  fg[ACTIVE] = @text_color
 
   text[NORMAL] = @text_color
-  text[PRELIGHT] = @text_color
-  text[SELECTED] = @selected_fg_color
+  text[PRELIGHT] =  @text_color
+  text[SELECTED] = @text_color
   text[INSENSITIVE] = @insensitive_fg_color
-  text[ACTIVE] = @selected_fg_color
+  text[ACTIVE] =  @text_color
 
   base[NORMAL] = @base_color
   base[PRELIGHT] = shade (0.95, @bg_color)
@@ -551,7 +555,7 @@ style "scrollbar" {
     image {
       function = BOX
       detail = "trough"
-      file = "assets/trough-scrollbar.png"
+      file = "assets/trough-scrollbar-horiz.png"
       border = { 2, 2, 3, 3 }
       stretch = TRUE
       orientation = HORIZONTAL
@@ -560,7 +564,7 @@ style "scrollbar" {
     image {
       function = BOX
       detail = "trough"
-      file = "assets/trough-scrollbar.png"
+      file = "assets/trough-scrollbar-vert.png"
       border = { 3, 3, 2, 2 }
       stretch = TRUE
       orientation = VERTICAL
@@ -676,38 +680,42 @@ style "scrollbar" {
   }
 }
 
-style "menu" {
 
-  xthickness = 0
-  ythickness = 0
+style "menu"
+{
 
-  GtkMenuItem::arrow-scaling = 0.4
-
-  bg[NORMAL] = @base_color
-  bg[INSENSITIVE] = @base_color
-  bg[PRELIGHT] = @base_color
-
-  engine "pixmap" { # For menus that use horizontal lines rather than gtkseparator
-
-    image {
-      function = HLINE
-      file = "assets/null.png"
-      border = { 0, 0, 0, 0 }
-      stretch = TRUE
-    }
-  }
+   engine "pixmap"
+   {
+      image
+      {
+         function = HLINE
+         file = "assets/menu-line.png"
+         border = { 0, 0, 1, 0 }
+         stretch = TRUE
+      }
+      image
+      {
+         function        = BOX
+	 recolorable     = TRUE
+	 file            = "assets/background3.png"
+	 border          = { 4, 4, 4, 4 }
+	 stretch         = TRUE	
+      }
+   }
 }
+
+
 
 style "menu_framed_box" {
 
-  engine "adwaita" {
-  }
+#  engine "adwaita" {
+#  }
 }
 
 style "menu_item"
 {
-  xthickness = 2
-  ythickness = 4
+  xthickness = 0
+  ythickness = 3
 
   # HACK: Gtk doesn't actually read this value
   # while rendering the menu items, but Libreoffice
@@ -717,9 +725,13 @@ style "menu_item"
   # highlight. The price to pay is black text on menus as well,
   # but at least it's readable.
   # See https://bugs.freedesktop.org/show_bug.cgi?id=38038
-  bg[SELECTED] = @selected_fg_color
-
-  text[PRELIGHT] = @fg_color
+ # bg[SELECTED] = @selected_fg_color
+#
+  fg[NORMAL] = @fg_color
+ fg[SELECTED] = @selected_fg_color
+#
+ fg[PRELIGHT] = @selected_fg_color
+  text[PRELIGHT] = @selected_fg_color
 
   engine "pixmap" {
 
@@ -729,6 +741,28 @@ style "menu_item"
       file = "assets/menuitem.png"
       border = { 1, 0, 1, 0 }
       stretch = TRUE
+    }
+
+    # Fix invisible scale trough on selected menuitems
+
+    image {
+      function = BOX
+      detail = "trough-lower"
+      file = "assets/trough-horizontal.png"
+      border = { 8, 8, 0, 0 }
+      stretch = TRUE
+      orientation = HORIZONTAL
+    }
+
+    image {
+      function = SLIDER
+      state = PRELIGHT
+      file = "assets/null.png"
+      border = { 0, 0, 0, 0 }
+      stretch = TRUE
+      overlay_file = "assets/slider.png"
+      overlay_stretch = FALSE
+      orientation = HORIZONTAL
     }
 
     # Check Buttons
@@ -747,7 +781,7 @@ style "menu_item"
       recolorable = TRUE
       state = PRELIGHT
       shadow = OUT
-      overlay_file = "assets/menu-checkbox-unchecked.png"
+      overlay_file = "assets/menu-checkbox-unchecked-selected.png"
       overlay_stretch = FALSE
     }
 
@@ -783,7 +817,7 @@ style "menu_item"
       recolorable = TRUE
       state = PRELIGHT
       shadow = IN
-      overlay_file = "assets/menu-checkbox-checked.png"
+      overlay_file = "assets/menu-checkbox-checked-selected.png"
       overlay_stretch = FALSE
     }
 
@@ -819,7 +853,7 @@ style "menu_item"
       function = OPTION
       state = PRELIGHT
       shadow = OUT
-      overlay_file = "assets/menu-radio-unchecked.png"
+      overlay_file = "assets/menu-radio-unchecked-selected.png"
       overlay_stretch = FALSE
     }
 
@@ -851,7 +885,7 @@ style "menu_item"
       function = OPTION
       state = PRELIGHT
       shadow = IN
-      overlay_file = "assets/menu-radio-checked.png"
+      overlay_file = "assets/menu-radio-checked-selected.png"
       overlay_stretch = FALSE
     }
 
@@ -905,6 +939,7 @@ style "button" {
   xthickness = 4
   ythickness = 4
 
+  
   engine "pixmap" {
 
     image {
@@ -953,110 +988,86 @@ style "entry" {
   xthickness = 6
   ythickness = 4
 
-  base[NORMAL] = @base_color
-  base[INSENSITIVE] = @insensitive_bg_color
-
   engine "pixmap" {
 
     image {
       function = SHADOW
-      detail = "entry"
       state = NORMAL
-      shadow = IN
-      file = "assets/entry-border-bg.png"
-      border = { 12, 12, 12, 12 }
+      detail = "entry"
+      file = "assets/entry-bg.png"
+      border = {6, 6, 6, 6}
       stretch = TRUE
     }
 
     image {
       function = SHADOW
+      state = ACTIVE
       detail = "entry"
+      file = "assets/entry-active-bg.png"
+      border = {6, 6, 6, 6}
+      stretch = TRUE
+    }
+
+    image {
+      function = SHADOW
       state = INSENSITIVE
-      shadow = IN
-      file = "assets/entry-border-disabled-bg.png"
-      border = { 12, 12, 12, 12 }
-      stretch = TRUE
-    }
-
-    image {
-      function = SHADOW
       detail = "entry"
-      state = ACTIVE
-      file = "assets/entry-border-active-bg.png"
-      border = { 12, 12, 12, 12 }
+      file = "assets/entry-disabled-bg.png"
+      border = {6, 6, 6, 6}
       stretch = TRUE
     }
 
     image {
       function = FLAT_BOX
-      detail = "entry_bg"
-      state = NORMAL
-      overlay_file = "assets/null.png"
-      overlay_border = { 0, 0, 0, 0 }
-      overlay_stretch = TRUE
+      state    = ACTIVE
+      detail   = "entry_bg"
+      file     = "assets/entry-background.png"
     }
 
     image {
       function = FLAT_BOX
-      detail = "entry_bg"
-      state = ACTIVE
-      overlay_file = "assets/null.png"
-      overlay_border = { 0, 0, 0, 0 }
-      overlay_stretch = TRUE
+      state    = INSENSITIVE
+      detail   = "entry_bg"
+      file     = "assets/entry-background-disabled.png"
+    }
+
+    image {
+      function = FLAT_BOX
+      detail   = "entry_bg"
+      file     = "assets/entry-background.png"
     }
   }
 }
 
 style "notebook_entry" {
-  xthickness = 6
 
   engine "pixmap" {
 
     image {
       function = SHADOW
-      detail = "entry"
       state = NORMAL
-      shadow = IN
-      file = "assets/notebook-entry-border-bg.png"
-      border = { 12, 12, 12, 12 }
+      detail = "entry"
+      file = "assets/entry-notebook.png"
+      border = {6, 6, 6, 6}
       stretch = TRUE
     }
 
     image {
       function = SHADOW
+      state = ACTIVE
       detail = "entry"
+      file = "assets/entry-active-notebook.png"
+      border = {6, 6, 6, 6}
+      stretch = TRUE
+    }
+
+    image {
+      function = SHADOW
       state = INSENSITIVE
-      shadow = IN
-      file = "assets/notebook-entry-border-disabled-bg.png"
-      border = { 12, 12, 12, 12 }
-      stretch = TRUE
-    }
-
-    image {
-      function = SHADOW
       detail = "entry"
-      state = ACTIVE
-      file = "assets/notebook-entry-border-active-bg.png"
-      border = { 12, 12, 12, 12 }
+      file = "assets/entry-disabled-notebook.png"
+      border = {6, 6, 6, 6}
       stretch = TRUE
-    }
-
-    image {
-      function = FLAT_BOX
-      detail = "entry_bg"
-      state = NORMAL
-      overlay_file = "assets/null.png"
-      overlay_border = { 0, 0, 0, 0 }
-      overlay_stretch = TRUE
-    }
-
-    image {
-      function = FLAT_BOX
-      detail = "entry_bg"
-      state = ACTIVE
-      overlay_file = "assets/null.png"
-      overlay_border = { 0, 0, 0, 0 }
-      overlay_stretch = TRUE
     }
   }
 }
@@ -1602,92 +1613,6 @@ style "gimp_spin_scale" {
   }
 }
 
-style "libreoffice_entry" {
-
-  engine "pixmap" {
-
-    image {
-      function = FLAT_BOX
-      detail = "entry_bg"
-      state = NORMAL
-      overlay_file = "assets/entry-border-fill.png"
-      overlay_border = { 0, 0, 0, 0 }
-      overlay_stretch = TRUE
-    }
-
-    image {
-      function = FLAT_BOX
-      detail = "entry_bg"
-      state = ACTIVE
-      overlay_file = "assets/entry-border-fill.png"
-      overlay_border = { 0, 0, 0, 0 }
-      overlay_stretch = TRUE
-    }
-
-    image {
-      function = SHADOW
-      detail = "entry"
-      state = NORMAL
-      shadow = IN
-      file = "assets/entry-border-bg-solid.png"
-      border = { 12, 12, 12, 12 }
-      stretch = TRUE
-    }
-
-    image {
-      function = SHADOW
-      detail = "entry"
-      state = ACTIVE
-      file = "assets/entry-border-active-bg-solid.png"
-      border = { 12, 12, 12, 12 }
-      stretch = TRUE
-    }
-  }
-}
-
-style "standalone_entry" {
-
-  engine "pixmap" {
-
-    image {
-      function = FLAT_BOX
-      detail = "entry_bg"
-      state = NORMAL
-      file = "assets/entry-border-fill.png"
-      stretch = TRUE
-      border = { 0, 0, 0, 0 }
-    }
-
-    image {
-      function = FLAT_BOX
-      detail = "entry_bg"
-      state = ACTIVE
-      file = "assets/entry-border-fill.png"
-      stretch = TRUE
-      border = { 0, 0, 0, 0 }
-    }
-
-    image {
-      function = SHADOW
-      detail = "entry"
-      state = NORMAL
-      shadow = IN
-      file = "assets/entry-border-bg-solid.png"
-      border = { 12, 12, 12, 12 }
-      stretch = TRUE
-    }
-
-    image {
-      function = SHADOW
-      detail = "entry"
-      state = ACTIVE
-      file = "assets/entry-border-active-bg-solid.png"
-      border = { 12, 12, 12, 12 }
-      stretch = TRUE
-    }
-  }
-}
-
 style "notebook" {
 
   xthickness = 5
@@ -1868,18 +1793,36 @@ style "range" {
 
     image {
       function = BOX
-      detail = "trough"
+      detail = "trough-upper"
       file = "assets/trough-horizontal.png"
-      border = { 4, 4, 0, 0 }
+      border = { 8, 8, 0, 0 }
       stretch = TRUE
       orientation = HORIZONTAL
     }
 
     image {
       function = BOX
-      detail = "trough"
+      detail = "trough-lower"
+      file = "assets/trough-horizontal-active.png"
+      border = { 8, 8, 0, 0 }
+      stretch = TRUE
+      orientation = HORIZONTAL
+    }
+
+    image {
+      function = BOX
+      detail = "trough-upper"
       file = "assets/trough-vertical.png"
-      border = { 0, 0, 4, 4 }
+      border = { 0, 0, 8, 8 }
+      stretch = TRUE
+      orientation = VERTICAL
+    }
+
+    image {
+      function = BOX
+      detail = "trough-lower"
+      file = "assets/trough-vertical-active.png"
+      border = { 0, 0, 8, 8 }
       stretch = TRUE
       orientation = VERTICAL
     }
@@ -2019,7 +1962,7 @@ style "separator_menu_item" {
 
     image {
       function = BOX
-      file = "assets/null.png"
+      file = "assets/line.png"
       border = { 0, 0, 1, 0 }
       stretch = TRUE
     }
@@ -2259,20 +2202,19 @@ style "eclipse-tooltips" {
 style "xfdesktop-icon-view" {
   XfdesktopIconView::label-alpha = 0
   XfdesktopIconView::selected-label-alpha = 100
-  XfdesktopIconVIew::ellipsize-icon-labels = 1
-
-  base[NORMAL] = @selected_bg_color
-  base[SELECTED] = @selected_bg_color
-  base[ACTIVE] = @selected_bg_color
+  XfdesktopIconView::shadow-x-offset = 0
+  XfdesktopIconView::shadow-y-offset = 1
+  XfdesktopIconView::selected-shadow-x-offset = 0
+  XfdesktopIconView::selected-shadow-y-offset = 1
+  XfdesktopIconView::shadow-color = "#000000"
+  XfdesktopIconView::selected-shadow-color = "#000000"
+  XfdesktopIconView::shadow-blur-radius = 2
+  XfdesktopIconView::cell-spacing = 2
+  XfdesktopIconView::cell-padding = 6
+  XfdesktopIconView::cell-text-width-proportion = 1.9
 
   fg[NORMAL] = @selected_fg_color
-  fg[SELECTED] = @selected_fg_color
   fg[ACTIVE] = @selected_fg_color
-
-  engine "murrine" {
-    textstyle = 5
-    text_shade = 0.05
-  }
 }
 
 style "xfwm-tabwin" {
@@ -2311,9 +2253,14 @@ style "chrome_menu_item" {
 }
 
 # Text Style
-style "text" {
+style "text" = "default" {
   engine "murrine" { textstyle = 0 }
 }
+
+style "menu_text" = "menu_item" {
+  engine "murrine" { textstyle = 0 }
+}
+
 
 style "null" {
 
@@ -2389,10 +2336,6 @@ widget_class "*<GimpToolbox>*<GtkFrame>"                            style "gimp_
 widget_class "*Chrom*Button*"                                       style "button"
 widget_class "*<GtkCustomMenu>*<GtkCustomMenuItem>*"                style "chrome_menu_item"
 
-# We use this weird selector to target an offscreen entry as created
-# by Chrome/Chromium to derive the style for its toolbar
-widget_class "<GtkEntry>"                                           style "standalone_entry"
-
 # Eclipse/SWT
 widget "gtk-tooltips*"                                              style "eclipse-tooltips"
 widget "*swt-toolbar-flat"                                          style "null"
@@ -2400,10 +2343,6 @@ widget "*swt-toolbar-flat"                                          style "null"
 # Openoffice, Libreoffice
 class "GtkWindow"                                                   style "toplevel_hack"
 widget "*openoffice-toplevel*"                                      style "ooo_stepper_hack"
-widget "*openoffice-toplevel*GtkEntry"                              style "libreoffice_entry"
-widget "*openoffice-toplevel*GtkSpinButton"                         style "libreoffice_entry"
-widget "*libreoffice-toplevel*GtkEntry"                             style "libreoffice_entry"
-widget "*libreoffice-toplevel*GtkSpinButton"                        style "libreoffice_entry"
 
 # Xfce
 widget_class "*XfdesktopIconView*"                                  style "xfdesktop-icon-view"
@@ -2411,7 +2350,8 @@ widget "xfwm4-tabwin*"                                              style "xfwm-
 widget "xfwm4-tabwin*GtkButton*"                                    style "xfwm-tabwin-button"
 
 # Fixes ugly text shadows for insensitive text
-widget_class "*<GtkLabel>"                                          style "text" 
+widget_class "*<GtkLabel>"                                          style "text"
+widget_class "*<GtkMenu>*<GtkLabel>"                                style "menu_text" 
 widget_class "*<GtkComboBox>*<GtkCellLayout>"                       style "text"
 widget_class "*<GtkNotebook>*<GtkLabel>"                            style "text"
 widget_class "*<GtkNotebook>*<GtkCellLayout>"                       style "text"

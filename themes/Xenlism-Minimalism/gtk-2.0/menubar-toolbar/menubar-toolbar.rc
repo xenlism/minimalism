@@ -1,9 +1,11 @@
 style "menubar" {
-
-  bg[NORMAL] = "#e7e8eb"
-  fg[NORMAL] = "#70788d"
-  fg[SELECTED] = @fg_color
-  fg[INSENSITIVE] = shade(1.3, "#70788d")
+  bg[INSENSITIVE] ="#dbdadd"
+  bg[NORMAL] = "#c8c8c8"
+  fg[NORMAL] = "#202020"
+  fg[PRELIGHT] = "#202020"
+  fg[ACTIVE] = "#202020"
+  fg[SELECTED] = @selected_fg_color
+  fg[INSENSITIVE] = shade(1.3, "#202020")
 
   xthickness = 0
   ythickness = 0
@@ -14,28 +16,28 @@ style "menubar" {
       function = BOX
       file  = "menubar-toolbar/menubar.png"
       stretch  = TRUE
-      border = { 1, 1, 1, 1 }
+      border = { 0,0,0,0 }
     }
   }
 }
 
 style "menubar-borderless" {
 
-  bg[NORMAL] = "#e7e8eb"
-  fg[NORMAL] = "#70788d"
+  bg[NORMAL] = "#dadbdd"
+  fg[NORMAL] = "#202020"
   fg[SELECTED] = @fg_color
   fg[INSENSITIVE] = shade(1.3, "#70788d")
 
   xthickness = 0
   ythickness = 0
-
   engine "pixmap" {
 
     image {
       function = BOX
-      file  = "assets/null.png"
+      file  = "menubar-toolbar/menubar-disabled.png"
       stretch  = TRUE
       border = { 1, 1, 1, 1 }
+  
     }
   }
 }
@@ -69,60 +71,56 @@ style "menubar-text" {
 }
 
 style "toolbar_entry" {
-  xthickness = 6
 
-  base[NORMAL] = "#fdfdfd"
-  base[INSENSITIVE] = "#f4f5f6"
-
-  text[NORMAL] = "#70788d"
+  text[NORMAL] = "#202020"
 
   engine "pixmap" {
 
     image {
       function = SHADOW
-      detail = "entry"
       state = NORMAL
-      shadow = IN
-      file = "menubar-toolbar/toolbar-entry-border-bg.png"
-      border = { 12, 12, 12, 12 }
+      detail = "entry"
+      file = "menubar-toolbar/entry-toolbar.png"
+      border = {6, 6, 6, 6}
       stretch = TRUE
     }
 
     image {
       function = SHADOW
+      state = ACTIVE
       detail = "entry"
+      file = "menubar-toolbar/entry-active-toolbar.png"
+      border = {6, 6, 6, 6}
+      stretch = TRUE
+    }
+
+    image {
+      function = SHADOW
       state = INSENSITIVE
-      shadow = IN
-      file = "menubar-toolbar/toolbar-entry-border-disabled-bg.png"
-      border = { 12, 12, 12, 12 }
-      stretch = TRUE
-    }
-
-    image {
-      function = SHADOW
       detail = "entry"
-      state = ACTIVE
-      file = "menubar-toolbar/toolbar-entry-border-active-bg.png"
-      border = { 12, 12, 12, 12 }
+      file = "menubar-toolbar/entry-disabled-toolbar.png"
+      border = {6, 6, 6, 6}
       stretch = TRUE
     }
 
     image {
       function = FLAT_BOX
-      detail = "entry_bg"
-      state = NORMAL
-      overlay_file = "assets/null.png"
-      overlay_border = { 0, 0, 0, 0 }
-      overlay_stretch = TRUE
+      state    = ACTIVE
+      detail   = "entry_bg"
+      file     = "assets/null.png"
     }
 
     image {
       function = FLAT_BOX
-      detail = "entry_bg"
-      state = ACTIVE
-      overlay_file = "assets/null.png"
-      overlay_border = { 0, 0, 0, 0 }
-      overlay_stretch = TRUE
+      state    = INSENSITIVE
+      detail   = "entry_bg"
+      file     = "assets/null.png"
+    }
+
+    image {
+      function = FLAT_BOX
+      detail   = "entry_bg"
+      file     = "assets/null.png"
     }
   }
 }
@@ -130,10 +128,10 @@ style "toolbar_entry" {
 #Chromium
 style "chrome-gtk-frame" {
 
-  ChromeGtkFrame::frame-color = "#e7e8eb"
-  ChromeGtkFrame::inactive-frame-color = "#EFF0F2"
+  ChromeGtkFrame::frame-color = "##d3d3d3"
+  ChromeGtkFrame::inactive-frame-color = "#d3d3d3"
 
-  ChromeGtkFrame::frame-gradient-size = 0
+  ChromeGtkFrame::frame-gradient-size = 0.50
   ChromeGtkFrame::frame-gradient-color = shade(0.5, @bg_color)
 
   ChromeGtkFrame::incognito-frame-color = shade(0.85, @bg_color)

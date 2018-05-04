@@ -1,7 +1,9 @@
 style "menubar" {
 
-  bg[NORMAL] = "#2f343b"
+  bg[NORMAL] = "#2f343f"
   fg[NORMAL] = "#afb8c5"
+  fg[PRELIGHT] = "#afb8c5"
+  fg[ACTIVE] = "#afb8c5"
   fg[SELECTED] = @selected_fg_color
   fg[INSENSITIVE] = shade(0.7, "#afb8c5")
 
@@ -21,7 +23,7 @@ style "menubar" {
 
 style "menubar-borderless" {
 
-  bg[NORMAL] = "#2f343b"
+  bg[NORMAL] = "#2f343f"
   fg[NORMAL] = "#afb8c5"
   fg[SELECTED] = @selected_fg_color
   fg[INSENSITIVE] = shade(0.7, "#afb8c5")
@@ -124,10 +126,10 @@ style "toolbar_button" {
 }
 
 style "toolbar_entry" {
-  xthickness = 6
 
-  base[NORMAL] = "#272b31"
-  base[INSENSITIVE] = "#292e35"
+  base[NORMAL] = "#404552"
+  base[ACTIVE] = "#404552"
+  base[INSENSITIVE] = "#39404d"
 
   text[NORMAL] = "#afb8c5"
 
@@ -135,49 +137,49 @@ style "toolbar_entry" {
 
     image {
       function = SHADOW
-      detail = "entry"
       state = NORMAL
-      shadow = IN
-      file = "menubar-toolbar/toolbar-entry-border-bg-dark.png"
-      border = { 12, 12, 12, 12 }
+      detail = "entry"
+      file = "menubar-toolbar/entry-toolbar-dark.png"
+      border = {6, 6, 6, 6}
       stretch = TRUE
     }
 
     image {
       function = SHADOW
+      state = ACTIVE
       detail = "entry"
+      file = "menubar-toolbar/entry-active-toolbar-dark.png"
+      border = {6, 6, 6, 6}
+      stretch = TRUE
+    }
+
+    image {
+      function = SHADOW
       state = INSENSITIVE
-      shadow = IN
-      file = "menubar-toolbar/toolbar-entry-border-disabled-bg-dark.png"
-      border = { 12, 12, 12, 12 }
-      stretch = TRUE
-    }
-
-    image {
-      function = SHADOW
       detail = "entry"
-      state = ACTIVE
-      file = "menubar-toolbar/toolbar-entry-border-active-bg-dark.png"
-      border = { 12, 12, 12, 12 }
+      file = "menubar-toolbar/entry-disabled-toolbar-dark.png"
+      border = {6, 6, 6, 6}
       stretch = TRUE
     }
 
     image {
       function = FLAT_BOX
-      detail = "entry_bg"
-      state = NORMAL
-      overlay_file = "assets/null.png"
-      overlay_border = { 0, 0, 0, 0 }
-      overlay_stretch = TRUE
+      state    = ACTIVE
+      detail   = "entry_bg"
+      file     = "assets/null.png"
     }
 
     image {
       function = FLAT_BOX
-      detail = "entry_bg"
-      state = ACTIVE
-      overlay_file = "assets/null.png"
-      overlay_border = { 0, 0, 0, 0 }
-      overlay_stretch = TRUE
+      state    = INSENSITIVE
+      detail   = "entry_bg"
+      file     = "assets/null.png"
+    }
+
+    image {
+      function = FLAT_BOX
+      detail   = "entry_bg"
+      file     = "assets/null.png"
     }
   }
 }
@@ -185,8 +187,8 @@ style "toolbar_entry" {
 #Chromium
 style "chrome-gtk-frame" {
 
-  ChromeGtkFrame::frame-color = "#2f343b"
-  ChromeGtkFrame::inactive-frame-color = "#32383F"
+  ChromeGtkFrame::frame-color = "#2f343f"
+  ChromeGtkFrame::inactive-frame-color = "#2f343f"
 
   ChromeGtkFrame::frame-gradient-size = 0
   ChromeGtkFrame::frame-gradient-color = shade(0.5, @bg_color)
