@@ -177,12 +177,13 @@
 				</p>
 				add sourceforg.net public gnupg key to the APT keys database
 <div class="code-block"><pre><code class="language-bash">
-	sudo apt-key adv --keyserver keys.gnupg.net --recv-keys 90127F5B
+	sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 2B80AC38
 </code></pre></div><!--//code-block-->
 				<br><p>
-				add  "deb http://downloads.sourceforge.net/project/xenlism-wildfire/repo deb/"  (without qoute) to /etc/apt/sources.list.
+				sudo add-apt-repository ppa:xenatt/xenlism
+sudo apt-get update
 <div class="code-block"><pre><code class="language-bash">
-	echo "deb http://downloads.sourceforge.net/project/xenlism-wildfire/repo deb/" | sudo tee -a /etc/apt/sources.list
+	sudo add-apt-repository ppa:xenatt/xenlism
 
 </code></pre></div><!--//code-block-->
 
