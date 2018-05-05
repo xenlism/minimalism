@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Xenlism Minimalism Beta
+Comment=A Minimalism themes
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Xenlism-Minimalism
+MetacityTheme=Xenlism-Minimalism
+IconTheme=Xenlism-Storm
+CursorTheme=DMZ-Black
+ButtonLayout=close,minimize,maximize:menu;
