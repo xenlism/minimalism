@@ -1,6 +1,6 @@
 Arch Linux Pacman Repository
 
-Xenlism Minimalism support Arch Linux Base Pacman Repositories.
+Xenlism Wildfire support Arch Linux Base Pacman Repositories.
 
 Following Command line in Terminal.
 
@@ -10,14 +10,17 @@ Following Command line in Terminal.
 
 add config section to /etc/pacman.conf
 
-
 	[xenlism-arch]
-	SigLevel = Never
+	SigLevel = Optional TrustAll
 	Server = http://downloads.sourceforge.net/project/xenlism-wildfire/repo/arch
 
 
-Update System and Install Xenlism minimalism theme.
+
+Update System and Install Xenlism Wildfire icon theme And Xenlism Artwork Wallpapers.
 
 
 	sudo pacman -Syyu
+	sudo pacman -S xenlism-wildfire-icon-theme
+	sudo pacman -S xenlism-storm-icon-theme
 	sudo pacman -S xenlism-minimalism-theme
+	sudo pacman -S xenlism-finewalls
