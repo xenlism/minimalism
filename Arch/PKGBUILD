@@ -6,16 +6,12 @@ _themename=minimalism
 pkgver=2018.05
 pkgrel=1
 depends=('gtk-engine-murrine' 'gdk-pixbuf2')
-conflicts=("${pkgname}")
-provides=("${pkgname}")
-replaces=("${pkgname}")
 pkgdesc="xenlism-minimalism simplicity theme for gnome desktop"
 arch=("any")
 url="https://xenlism.github.io/minimalism"
 license=("GPL3")
 provides=("$pkgname")
 conflicts=("$pkgname")
-replaces=("$pkgname")
 source=("https://github.com/xenlism/Wildfire/archive/$pkgver.tar.gz")
 md5sums=('50ad11f66cfa112705ed457f9aef74f1')
 package() {
