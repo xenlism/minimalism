@@ -958,9 +958,11 @@ StScrollBar {
 	icon-size: 16px; }
 .message-title {
 	font-weight: bold;
-	padding: 2px 0 2px 0; }
+	padding: 2px 0 2px 0;
+	color: #000000; }
 .message-content {
-	padding: 8px; }
+	padding: 8px;
+	color: #000000; }
 
 .ripple-box {
 	width: 52px;
