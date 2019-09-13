@@ -683,7 +683,7 @@ StScrollBar {
 #panel .screencast-indicator {
 	color: #FC4138; }
 #panel .clock-display > * > *:last-child {
-	color: #5294E2;
+	color: #ffffff;
 	margin-left: .3em; }
 #panel .popup-menu-arrow {
 	width: 0; }
