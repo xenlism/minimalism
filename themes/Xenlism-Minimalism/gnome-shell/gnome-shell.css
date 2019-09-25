@@ -17,7 +17,7 @@
  * Inc., 51 Franklin St - Fifth Floor, Boston, MA 02110-1301 USA.
  */
 stage {
-	font-family: Roboto,Noto,Sans, Ubuntu, Sans-Serif;
+	font-family: Cantarell,Roboto,Noto,Sans, Ubuntu, Sans-Serif;
 	font-size: 9pt;
 	color: #2e3436; }
 
@@ -125,18 +125,24 @@ StScrollBar {
 		background-color: #5294E2; }
 
 .slider {
-	-slider-height: 4px;
-	-slider-background-color: #cfd6e6;
-	-slider-border-color: transparent;
-	-slider-active-background-color: #5294E2;
-	-slider-active-border-color: transparent;
-	-slider-border-width: 0;
-	-slider-handle-radius: 4px;
-	height: 18px;
-	border: 0 solid transparent;
-	border-right-width: 1px;
-	border-left-width: 5px;
-	color: transparent; }
+  height: 1em;
+  -barlevel-height: 0.3em;
+  -barlevel-background-color: rgba(46, 52, 54, 0.5);
+  -barlevel-border-color: #cdc7c2;
+  -barlevel-active-background-color: #3584e4;
+  -barlevel-active-border-color: #185fb4;
+  -barlevel-overdrive-color: #e01b24;
+  -barlevel-overdrive-border-color: #b2161d;
+  -barlevel-overdrive-separator-width: 0.2em;
+  -barlevel-border-width: 0px;
+  -slider-handle-radius: 8px;
+  -slider-handle-border-width: 0px;
+  -slider-handle-border-color: #cdc7c2;
+  color: white; }
+  .slider:hover {
+    color: white; }
+  .slider:active {
+    color: #d6d1cd; }
 
 .check-box StBoxLayout {
 	spacing: .8em; }
@@ -593,8 +599,7 @@ StScrollBar {
 
 #panel {
 	font-weight: bold;
-	height: 2.1em;
-	min-height: 27px;
+	height: 2em;
 	border-image: url("common-assets/panel/panel.svg") 1 1 1 1;
 	text-shadow: rgba(0 ,0 ,0 ,0.5) 0px 0px 2px;
 	icon-shadow: rgba(0 ,0 ,0 ,0.5) 0px 0px 2px;
@@ -763,7 +768,7 @@ StScrollBar {
 	spacing: 0.5em; }
 
 .datemenu-displays-section {
-	padding-bottom: 3em; }
+	padding-bottom: 3em;}
 
 .datemenu-today-button,
 .world-clocks-button,
@@ -819,15 +824,6 @@ StScrollBar {
 	color: #2e3436;
 	font-weight: bold;
 	padding: 8px 0; }
-
-.pager-button {
-	color: transparent;
-	background-color: transparent;
-	width: 32px;
-	border-radius: 2px; }
-.pager-button:focus, .pager-button:hover, .pager-button:active {
-	background-color: transparent; }
-
 .calendar-change-month-back {
 	background-image: url("light-assets/misc/calendar-arrow-left.svg"); }
 .calendar-change-month-back:focus, .calendar-change-month-back:hover {
@@ -906,6 +902,26 @@ StScrollBar {
 .calendar-other-month-day {
 	color: rgba(92, 97, 108, 0.3);
 	opacity: 1; }
+.calendar-week-number {
+  font-size: 70%;
+  font-weight: bold;
+  width: 2.3em;
+  height: 1.8em;
+  border-radius: 2px;
+  padding: 0.5em 0 0;
+  margin: 6px;
+  background-color: #5294E2;
+  color: #eeeeec;
+}
+.pager-button {
+	color: transparent;
+	background-color: transparent;
+	width: 32px;
+	border-radius: 2px; }
+.pager-button:focus, .pager-button:hover, .pager-button:active {
+	background-color: transparent; }
+
+
 
 .message-list {
 	width: 420px; }
@@ -1141,70 +1157,34 @@ StScrollBar {
 	height: 16px;
 	background-image: url("common-assets/misc/more-results.svg"); }
 
+
 #dash {
-	font-size: 1em;
-	padding: 6px 1px 6px 0px;
-	border-radius: 0 3px 3px 0;
-	background-color: rgba(255,255,255,0) !important;
-	border:none !important;	}
-	#dash:rtl {
-	border-radius: 3px 0 0 3px;
-	 }
-.right #dash, #dash:rtl {
-	padding: 6px 0px 6px 1px;
-	}
-.bottom #dash {
-	padding: 1px 6px 0px 6px; }
-.top #dash {
-	padding: 0px 6px 1px 6px; }
+	background-color: rgba(255, 255, 255, 0.2);
+  	font-size: 9pt;
+	padding: 4px;
+  	border-radius: 0px 9px 9px 0px; }
+#dash:rtl {
+    	border-radius: 9px 0 0 9px; }
 #dash .placeholder {
-	height: 24px; }
+	background-image: url("resource:///org/gnome/shell/theme/dash-placeholder.svg");
+    	background-size: contain;
+    	height: 24px; }
 #dash .empty-dash-drop-target {
-	width: 24px;
-	height: 24px; }
+    	width: 24px;
+    	height: 24px; }
 
 .dash-item-container > StWidget {
-	padding: 0px 4px 0px 5px;
-	margin-top: 3px;
-}
-.right .dash-item-container > StWidget, .dash-item-container > StWidget:rtl {
-	padding: 0px 5px 0px 4px; }
-.bottom .dash-item-container > StWidget {
-	padding: 4px 0px 5px 0px; }
-.top .dash-item-container > StWidget {
-	padding: 5px 0px 4px 0px; }
+  padding: 2px; }
 
 .dash-label {
-	border-radius: 3px;
-	padding: 4px 12px;
-	color: #ffffff;
-	background-color: rgba(0, 0, 0, 0.7);
-	text-align: center;
-	-x-offset: 3px; }
-.bottom .dash-label, .top .dash-label {
-	-y-offset: 3px;
-	-x-offset: 0; }
+  border-radius: 7px;
+  padding: 4px 12px;
+  color: #eeeeec;
+  background-color: rgba(32, 32, 32, 0.91);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  text-align: center;
+  -x-offset: 8px; }
 
-#dash .app-well-app .overview-icon,
-.right #dash .app-well-app .overview-icon,
-.bottom #dash .app-well-app .overview-icon,
-.top #dash .app-well-app .overview-icon ,
-#dash .app-well-app:hover .overview-icon,
-.right #dash .app-well-app:hover .overview-icon,
-.bottom #dash .app-well-app:hover .overview-icon,
-.top #dash .app-well-app:hover .overview-icon {
-	padding: 5px;}
-
-#dash .app-well-app:active .overview-icon,
-.right #dash .app-well-app:active .overview-icon,
-.bottom #dash .app-well-app:active .overview-icon,
-.top #dash .app-well-app:active .overview-icon {
-	background: none;}
-#dash .app-well-app-running-dot {
-	width: 11px;
-	height: 2px;
-	margin-bottom: 1px;
-	background-color: rgb(60,180,250); }
 
 #dashtodockContainer .app-well-app-running-dot {
 	background: none;
@@ -1225,7 +1205,7 @@ StScrollBar {
 
 .show-apps .overview-icon {
 	padding: 0px;
-	margin: 5px;
+	margin: 0px;
 	color: rgb(230,230,230);
 	background-color: rgba(255, 255, 255, 0.5);
 	border-radius: 2px;
@@ -1243,6 +1223,7 @@ StScrollBar {
 .show-apps:checked .overview-icon,
 .show-apps:checked .show-apps-icon {
 	transition-duration: 0ms; }
+
 .icon-grid {
 	spacing: 30px;
 	-shell-grid-horizontal-item-size: 136px;
@@ -1972,4 +1953,3 @@ StScrollBar {
 	border: 1px solid grey;
 	border-radius: 2px;
 	padding: 6px; }
-
