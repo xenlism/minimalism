@@ -12,7 +12,7 @@ url="https://xenlism.github.io/minimalism"
 license=("GPL3")
 provides=("$pkgname")
 conflicts=("$pkgname")
-source=("https://github.com/xenlism/Wildfire/archive/$pkgver.tar.gz")
+source=("https://github.com/xenlism/minimalismarchive/$pkgver.tar.gz")
 md5sums=('50ad11f66cfa112705ed457f9aef74f1')
 package() {
 	cd "$srcdir/$_themename-$pkgver"
