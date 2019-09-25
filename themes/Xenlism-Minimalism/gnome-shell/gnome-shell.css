@@ -1420,28 +1420,7 @@ StScrollBar {
 	background-color: #5294E2;
 	box-shadow: none;
   transition-duration: 0ms; }
-#dashtodockContainer #dash {
-    border-radius: 3px !important;
-}
-#dashtodockContainer.shrink.left #dash,
-#dashtodockContainer.dashtodock.left #dash,
-#dashtodockContainer.extended.left {
-    margin-left: 5px;
-}
-#dashtodockContainer.shrink.right #dash,
-#dashtodockContainer.dashtodock.right #dash,
-#dashtodockContainer.extended.right {
-    margin-right: 5px;
-}
-#dashtodockContainer.shrink.top #dash,
-#dashtodockContainer.dashtodock.top #dash,
-#dashtodockContainer.extended.top{
-  margin-top: 5px;
-}
-#dashtodockContainer.shrink.bottom #dash,
-#dashtodockContainer.dashtodock.bottom #dash,
-#dashtodockContainer.extended.bottom {
-  margin-bottom: 5px;}
+
 
 
 /* App Vault/Grid */
