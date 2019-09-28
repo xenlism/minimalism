@@ -90,7 +90,7 @@ style "default" {
 
   text[NORMAL] = @text_color
   text[PRELIGHT] =  @text_color
-  text[SELECTED] = @text_color
+  text[SELECTED] = @fg_color
   text[INSENSITIVE] = @insensitive_fg_color
   text[ACTIVE] =  @text_color
 
@@ -680,30 +680,34 @@ style "scrollbar" {
   }
 }
 
-
 style "menu"
 {
 
    engine "pixmap"
    {
-      image
-      {
-         function = HLINE
-         file = "assets/menu-line.png"
-         border = { 0, 0, 1, 0 }
-         stretch = TRUE
-      }
+      
       image
       {
          function        = BOX
 	 recolorable     = TRUE
-	 file            = "assets/background3.png"
+	 file            = "assets/background.png"
 	 border          = { 4, 4, 4, 4 }
 	 stretch         = TRUE	
       }
    }
 }
+style "separator_menu_item" {
+  xthickness = 0
+  ythickness = 2
 
+  engine "pixmap" {
+    image {
+      function = BOX
+      file     = "assets/menu-line.png"
+      border   = {0, 0, 0, 2}
+    }
+  }
+}
 
 
 style "menu_framed_box" {
@@ -1956,18 +1960,7 @@ style "progressbar" {
   }
 }
 
-style "separator_menu_item" {
 
-  engine "pixmap" {
-
-    image {
-      function = BOX
-      file = "assets/line.png"
-      border = { 0, 0, 1, 0 }
-      stretch = TRUE
-    }
-  }
-}
 
 style "treeview_header" {
   ythickness = 1
